@@ -6,6 +6,7 @@ import Nav from "./Nav";
 
 const Logo = styled.h1`
   font-size: 4rem;
+  font-weight: bold;
   margin-left: 2rem;
   position: relative;
   z-index: 2;
