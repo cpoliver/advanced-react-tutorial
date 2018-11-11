@@ -10,18 +10,28 @@ Router.onRouteChangeStart = () => NProgress.start();
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-const Logo = styled.h1`
-  font-size: 4rem;
+const Logo = styled.div`
+  display: flex;
+  flex-direction: row;
   font-weight: bold;
   margin-left: 2rem;
-  position: relative;
   z-index: 2;
+
+  h1 {
+    font-size: 4rem;
+  }
 
   a {
     color: ${props => props.theme.black};
     padding: 0.5rem;
     text-decoration: none;
     text-transform: uppercase;
+  }
+
+  img {
+    align-self: center;
+    height: 64px;
+    margin-right: 1rem;
   }
 
   @media (max-w9dth: 1300px) {
@@ -55,9 +65,14 @@ const Header = () => (
   <StyledHeader>
     <div className="bar">
       <Logo>
-        <Link href="/">
-          <a>Old Crow</a>
-        </Link>
+        <img src="/static/old-crow-logo.png" />
+        <div>
+          <Link href="/">
+            <h1>
+              <a>Old Crow</a>
+            </h1>
+          </Link>
+        </div>
       </Logo>
       <Nav />
     </div>
